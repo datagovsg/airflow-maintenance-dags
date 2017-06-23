@@ -1,0 +1,13 @@
+sudo: false
+language: python
+python:
+- '2.7'
+branches:
+  only:
+  - develop
+  - master
+install:
+- pip install isort==4.2.5 pylint==1.7.1
+script:
+- pylint --rcfile=.pylintrc `find . -iname "*.py"`
+- isort --verbose --diff --check-only

@@ -1,0 +1,5 @@
+[MESSAGES CONTROL]
+disable=duplicate-code,import-error
+
+[REPORTS]
+reports=no

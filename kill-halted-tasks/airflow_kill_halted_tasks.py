@@ -24,7 +24,7 @@ from sqlalchemy import and_
 # airflow_kill_halted_tasks
 DAG_ID = os.path.basename(__file__).replace(".pyc", "").replace(".py", "")
 
-START_DATE = datetime.now() - timedelta(minutes=1)
+START_DATE = datetime.now() - timedelta(hours=1)
 
 # How often to Run. @daily - Once a day at Midnight. @hourly - Once an Hour.
 SCHEDULE_INTERVAL = "@hourly"

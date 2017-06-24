@@ -20,7 +20,7 @@ from airflow.operators.python_operator import PythonOperator
 # airflow_db_cleanup
 DAG_ID = os.path.basename(__file__).replace(".pyc", "").replace(".py", "")
 
-START_DATE = datetime.now() - timedelta(minutes=1)
+START_DATE = datetime.now() - timedelta(days=1)
 
 # How often to Run. @daily - Once a day at Midnight (UTC)
 SCHEDULE_INTERVAL = "@daily"

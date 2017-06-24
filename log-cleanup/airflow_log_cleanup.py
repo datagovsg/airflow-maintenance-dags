@@ -18,7 +18,7 @@ from airflow.operators.bash_operator import BashOperator
 # airflow_log_cleanup
 DAG_ID = os.path.basename(__file__).replace(".pyc", "").replace(".py", "")
 
-START_DATE = datetime.now() - timedelta(minutes=1)
+START_DATE = datetime.now() - timedelta(days=1)
 
 BASE_LOG_FOLDER = conf.get("core", "BASE_LOG_FOLDER")
 

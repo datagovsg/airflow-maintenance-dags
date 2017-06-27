@@ -2,7 +2,7 @@
 A maintenance workflow that you can deploy into Airflow to periodically clean
 out the task logs to avoid those getting too big.
 
-airflow trigger_dag --conf '{"maxLogAgeInDays":30}' airflow-log-cleanup
+airflow trigger_dag --conf '{"maxLogAgeInDays":30}' airflow_log_cleanup
 
 --conf options:
     maxLogAgeInDays:<INT> - Optional
@@ -61,6 +61,7 @@ DAG_OBJ = DAG(DAG_ID,
 
 # pylint: disable=line-too-long
 LOG_CLEANUP_BASH = """
+set -euo pipefail
 echo "Getting Configurations..."
 BASE_LOG_FOLDER='""" + BASE_LOG_FOLDER + """'
 MAX_LOG_AGE_IN_DAYS="{{dag_run.conf.maxLogAgeInDays}}"
